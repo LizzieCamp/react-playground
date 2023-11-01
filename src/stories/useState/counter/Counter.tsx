@@ -14,7 +14,9 @@ export const Counter = () => {
     <div>
       <button onClick={increaseCount}>Increase Count</button>
       <button onClick={decreaseCount}>Decrease Count</button>
-      <h1>{state}</h1>
+      <h1 placeholder="counter value">{state}</h1>
     </div>
   );
 };
+
+export default Counter;
