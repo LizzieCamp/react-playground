@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
 export const Counter = () => {
-  const [state, setState] = useState(0);
+  const [state, setState] = useState<number>(0);
 
   const increaseCount = () => {
     setState(state + 1);
