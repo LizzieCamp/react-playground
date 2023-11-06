@@ -1,0 +1,22 @@
+import { Canvas, Meta, Story } from "@storybook/blocks";
+
+import * as ToggleStories from "./Toggle.stories.tsx";
+
+<Meta of={ToggleStories} />
+
+# Toggle
+
+This component represents a toggle button that switches between an "on" and "off" state when clicked. It utilizes the useState hook from React to manage its internal state.
+
+The component maintains two state variables:
+
+`state` `(boolean)`: Represents the current state of the toggle button. It is initially set to true.
+
+`value` `(string)`: Represents the text displayed on the toggle button. It can be either "on" or "off" based on the state variable.
+
+The `toggle` function is invoked when the button is clicked and is responsible for toggling the `state` variable and updating the `value` variable accordingly.
+
+- If the `state` is `true` (indicating the button is in the "on" state), it sets the `state` to `false` and updates the `value` to "off".
+- If the `state` is `false` (indicating the button is in the "off" state), it sets the `state` to `true` and updates the `value` to "on".
+
+<Story of={ToggleStories.Primary} />
