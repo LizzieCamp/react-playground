@@ -1,16 +1,21 @@
 import React, { useEffect, useState } from "react";
 
 export const Clock = () => {
-  let date = new Date();
-  let [curDate, setCurDate] = useState(new Date());
+  const [curDate, setCurDate] = useState(new Date());
 
   const tick = () => {
     setCurDate(new Date());
   };
 
   useEffect(() => {
-    tick();
-  });
+    const intervalId = setInterval(() => {
+      tick();
+    }, 1000);
+
+    return () => {
+      clearInterval(intervalId);
+    };
+  }, []);
 
   return (
     <div>
