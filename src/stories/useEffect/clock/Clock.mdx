@@ -6,5 +6,31 @@ import * as ClockStories from "./Clock.stories.tsx";
 
 # Clock
 
+The `Clock` component is a React component that displays the current date and time, updating it every second
+
+---
+
+`useState` Hook:
+
+- The component uses the `useState` hook to manage the `curDate` state variable, which represents the current date and time.
+- `useState(new Date())` initializes `curDate` with the current date and time.
+
+---
+
+`useEffect` Hook:
+
+- `useEffect` sets up an interval to update the curDate state every second.
+- The hook takes a function as its first argument, which contains the code to run the side effect. In this case, it calls the `tick` function, which updates the `curDate` state with the current date and time.
+- The empty dependency array ([]) ensures that the useEffect runs once after the initial render.
+
+---
+
+`clearInterval`:
+
+- `setInterval` returns an interval ID (`intervalId`), which is used to identify and clear the interval.
+- The `return` statement inside `useEffect` contains a cleanup function. This function is called when the component is unmounted or when the dependency array of `useEffect` changes.
+- The cleanup function calls `clearInterval(intervalId)` to stop the interval and prevent memory leaks.
+
+---
 
 <Story of={ClockStories.Primary} />
