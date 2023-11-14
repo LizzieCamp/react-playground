@@ -62,14 +62,14 @@
     "msw-storybook-addon": "^1.8.0",
     "prop-types": "^15.8.1",
     "storybook": "^7.0.6",
-    "vite": "^4.2.0"
+    "vite": "^4.2.0",
+    "jest-fetch-mock": "^3.0.3"
   },
   "jest": {
     "extensionsToTreatAsEsm": [
       ".ts",
       ".tsx"
     ],
-    "babelConfig": true,
     "testEnvironment": "jsdom"
   }
 }
