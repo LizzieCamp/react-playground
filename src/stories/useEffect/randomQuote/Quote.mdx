@@ -1,0 +1,30 @@
+import { Canvas, Meta, Story } from "@storybook/blocks";
+
+import * as QuoteStories from "./Quote.stories.tsx";
+
+<Meta of={QuoteStories} />
+
+# Quote
+
+Uses the quoteable api from here: `https://github.com/lukePeavey/quotable`
+
+---
+
+The component utilizes the useState hook to manage two state variables:
+
+- `quote`: Represents the content of the fetched quote, initialized with the starting message "Starting message."
+
+- `userInput`: A boolean flag that, when set to `true`, triggers the fetching of a new quote. It is reset to `false` after the quote is fetched.
+
+---
+
+The getList function uses `fetch` to make an asynchronous call to the Quotable API, specifically to the endpoint for a random quote. Upon a successful response, the quote content is extracted and stored in the `quote` state variable.
+
+---
+
+The `useEffect` hook is employed to conditionally fetch a new quote when the `userInput` state variable is set to `true`. This ensures that the component fetches a new quote only when triggered by user interaction.
+
+
+---
+
+<Story of={QuoteStories.Primary} />
