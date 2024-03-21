@@ -1,0 +1,31 @@
+import { Canvas, Meta, Story } from "@storybook/blocks";
+
+import * as toDoListStories from "./toDoList.stories.tsx";
+
+<Meta of={toDoListStories} />
+
+# toDoList
+
+The `toDoList` component is a React component that allows users to add items to a todoList
+
+---
+
+It defines a reducer function. Reducers in React are used to manage state changes based on dispatched actions. In this reducer:
+
+- It initializes an empty array.
+- If the dispatched action type is "add_todo_item", it creates a copy of the current state array, pushes the payload (todo item) into it, and returns the new array.
+- If the action type is not recognized, it throws an error.
+- It defines the toDoList component:
+
+--- 
+
+- Inside the component, it initializes a ref for an input element using useRef.
+- This ref will be used to access the input field where users can enter new to-do items.
+- It initializes the state using useReducer, passing the reducer function and an initial state of an empty array [].
+- It renders a text input field and a button for adding new to-do items.
+- When the button is clicked, it retrieves the value from the input field, dispatches an action with type "add_todo_item" and payload as the input value.
+- It maps over the state array and renders each item as a list item.
+
+---
+
+<Story of={toDoListStories.Primary} />
