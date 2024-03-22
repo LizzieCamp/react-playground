@@ -11,14 +11,14 @@ const reducer = (state: any, action: { type: string; payload: any }) => {
   throw Error("Unknown action.");
 };
 
-export const toDoList = () => {
+export const ToDoList = () => {
   const playerName = useRef<HTMLInputElement>(null);
   const [state, dispatch] = useReducer(reducer, []);
 
   return (
     <>
       <p>
-        <input ref={playerName} type="text" />
+        <input placeholder="new-item" ref={playerName} type="text" />
       </p>
       <button
         onClick={() => {
@@ -35,4 +35,4 @@ export const toDoList = () => {
   );
 };
 
-export default toDoList;
+export default ToDoList;
